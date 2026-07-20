@@ -1,0 +1,504 @@
+{
+  "target": "juiceshop:3000",
+  "start": "2026-07-20 11:48:25",
+  "end": "2026-07-20 11:48:26",
+  "duration": 1.6,
+  "score": 0,
+  "risk": "CRITICAL",
+  "issues": [
+    {
+      "severity": "Medium",
+      "issue": "Missing security header: Strict-Transport-Security",
+      "detail": "Enforces HTTPS \u2014 prevents SSL stripping"
+    },
+    {
+      "severity": "Medium",
+      "issue": "Missing security header: Content-Security-Policy",
+      "detail": "Prevents XSS and injection attacks"
+    },
+    {
+      "severity": "Medium",
+      "issue": "Missing security header: X-XSS-Protection",
+      "detail": "Legacy XSS filter"
+    },
+    {
+      "severity": "Medium",
+      "issue": "Missing security header: Referrer-Policy",
+      "detail": "Controls referrer information leakage"
+    },
+    {
+      "severity": "Medium",
+      "issue": "Missing security header: Permissions-Policy",
+      "detail": "Controls browser feature access"
+    },
+    {
+      "severity": "Critical",
+      "issue": "Sensitive file exposed: /.git/HEAD",
+      "detail": "HTTP 200, 9903 bytes"
+    },
+    {
+      "severity": "Critical",
+      "issue": "Sensitive file exposed: /.env",
+      "detail": "HTTP 200, 9903 bytes"
+    },
+    {
+      "severity": "Critical",
+      "issue": "Sensitive file exposed: /config.php",
+      "detail": "HTTP 200, 9903 bytes"
+    },
+    {
+      "severity": "Critical",
+      "issue": "Sensitive file exposed: /phpinfo.php",
+      "detail": "HTTP 200, 9903 bytes"
+    },
+    {
+      "severity": "Critical",
+      "issue": "Sensitive file exposed: /.htaccess",
+      "detail": "HTTP 200, 9903 bytes"
+    },
+    {
+      "severity": "Critical",
+      "issue": "Sensitive file exposed: /backup.zip",
+      "detail": "HTTP 200, 9903 bytes"
+    },
+    {
+      "severity": "Critical",
+      "issue": "Sensitive file exposed: /backup.sql",
+      "detail": "HTTP 200, 9903 bytes"
+    },
+    {
+      "severity": "Critical",
+      "issue": "Sensitive file exposed: /dump.sql",
+      "detail": "HTTP 200, 9903 bytes"
+    },
+    {
+      "severity": "Critical",
+      "issue": "Sensitive file exposed: /db.sql",
+      "detail": "HTTP 200, 9903 bytes"
+    },
+    {
+      "severity": "Critical",
+      "issue": "Sensitive file exposed: /.travis.yml",
+      "detail": "HTTP 200, 9903 bytes"
+    },
+    {
+      "severity": "Critical",
+      "issue": "Sensitive file exposed: /Dockerfile",
+      "detail": "HTTP 200, 9903 bytes"
+    },
+    {
+      "severity": "Critical",
+      "issue": "Sensitive file exposed: /docker-compose.yml",
+      "detail": "HTTP 200, 9903 bytes"
+    },
+    {
+      "severity": "Critical",
+      "issue": "Sensitive file exposed: /package.json",
+      "detail": "HTTP 200, 9903 bytes"
+    },
+    {
+      "severity": "Critical",
+      "issue": "Sensitive file exposed: /web.config",
+      "detail": "HTTP 200, 9903 bytes"
+    }
+  ],
+  "modules": [
+    {
+      "module": "dns",
+      "findings": [
+        {
+          "type": "A_RECORD",
+          "value": "172.18.0.4"
+        },
+        {
+          "type": "REVERSE_DNS",
+          "value": "172.18.0.4 \u2192 juiceshop.soc-lab"
+        }
+      ],
+      "ips": [
+        "172.18.0.4"
+      ],
+      "cname": []
+    },
+    {
+      "module": "subdomains",
+      "found": [],
+      "total_checked": 97
+    },
+    {
+      "module": "ports",
+      "open_ports": [],
+      "risky_ports": []
+    },
+    {
+      "module": "web_tech",
+      "technologies": [],
+      "server": "",
+      "cms": ""
+    },
+    {
+      "module": "headers",
+      "missing": [
+        {
+          "header": "Strict-Transport-Security",
+          "description": "Enforces HTTPS \u2014 prevents SSL stripping"
+        },
+        {
+          "header": "Content-Security-Policy",
+          "description": "Prevents XSS and injection attacks"
+        },
+        {
+          "header": "X-XSS-Protection",
+          "description": "Legacy XSS filter"
+        },
+        {
+          "header": "Referrer-Policy",
+          "description": "Controls referrer information leakage"
+        },
+        {
+          "header": "Permissions-Policy",
+          "description": "Controls browser feature access"
+        }
+      ],
+      "present": [
+        {
+          "header": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "header": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
+      ],
+      "leaky": [],
+      "score": 28
+    },
+    {
+      "module": "paths",
+      "found": [
+        {
+          "path": "/robots.txt",
+          "url": "http://juiceshop:3000/robots.txt",
+          "status": 200,
+          "size": 28,
+          "content_type": "text/plain; charset=utf-8"
+        },
+        {
+          "path": "/.well-known/security.txt",
+          "url": "http://juiceshop:3000/.well-known/security.txt",
+          "status": 200,
+          "size": 475,
+          "content_type": "text/plain; charset=utf-8"
+        },
+        {
+          "path": "/admin/",
+          "url": "http://juiceshop:3000/admin/",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/sitemap.xml",
+          "url": "http://juiceshop:3000/sitemap.xml",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/admin",
+          "url": "http://juiceshop:3000/admin",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/administrator",
+          "url": "http://juiceshop:3000/administrator",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/wp-login.php",
+          "url": "http://juiceshop:3000/wp-login.php",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/login",
+          "url": "http://juiceshop:3000/login",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/.git/HEAD",
+          "url": "http://juiceshop:3000/.git/HEAD",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/.env",
+          "url": "http://juiceshop:3000/.env",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/config.php",
+          "url": "http://juiceshop:3000/config.php",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/phpinfo.php",
+          "url": "http://juiceshop:3000/phpinfo.php",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/swagger.json",
+          "url": "http://juiceshop:3000/swagger.json",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/swagger",
+          "url": "http://juiceshop:3000/swagger",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/graphql",
+          "url": "http://juiceshop:3000/graphql",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/openapi.json",
+          "url": "http://juiceshop:3000/openapi.json",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/.htaccess",
+          "url": "http://juiceshop:3000/.htaccess",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/backup.zip",
+          "url": "http://juiceshop:3000/backup.zip",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/graphiql",
+          "url": "http://juiceshop:3000/graphiql",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/backup.sql",
+          "url": "http://juiceshop:3000/backup.sql",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/dump.sql",
+          "url": "http://juiceshop:3000/dump.sql",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/db.sql",
+          "url": "http://juiceshop:3000/db.sql",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/server-status",
+          "url": "http://juiceshop:3000/server-status",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/.travis.yml",
+          "url": "http://juiceshop:3000/.travis.yml",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/server-info",
+          "url": "http://juiceshop:3000/server-info",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/Dockerfile",
+          "url": "http://juiceshop:3000/Dockerfile",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/docker-compose.yml",
+          "url": "http://juiceshop:3000/docker-compose.yml",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/package.json",
+          "url": "http://juiceshop:3000/package.json",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/web.config",
+          "url": "http://juiceshop:3000/web.config",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/crossdomain.xml",
+          "url": "http://juiceshop:3000/crossdomain.xml",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/clientaccesspolicy.xml",
+          "url": "http://juiceshop:3000/clientaccesspolicy.xml",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        }
+      ],
+      "sensitive": [
+        {
+          "path": "/.git/HEAD",
+          "url": "http://juiceshop:3000/.git/HEAD",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/.env",
+          "url": "http://juiceshop:3000/.env",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/config.php",
+          "url": "http://juiceshop:3000/config.php",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/phpinfo.php",
+          "url": "http://juiceshop:3000/phpinfo.php",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/.htaccess",
+          "url": "http://juiceshop:3000/.htaccess",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/backup.zip",
+          "url": "http://juiceshop:3000/backup.zip",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/backup.sql",
+          "url": "http://juiceshop:3000/backup.sql",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/dump.sql",
+          "url": "http://juiceshop:3000/dump.sql",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/db.sql",
+          "url": "http://juiceshop:3000/db.sql",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/.travis.yml",
+          "url": "http://juiceshop:3000/.travis.yml",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/Dockerfile",
+          "url": "http://juiceshop:3000/Dockerfile",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/docker-compose.yml",
+          "url": "http://juiceshop:3000/docker-compose.yml",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/package.json",
+          "url": "http://juiceshop:3000/package.json",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "path": "/web.config",
+          "url": "http://juiceshop:3000/web.config",
+          "status": 200,
+          "size": 9903,
+          "content_type": "text/html; charset=UTF-8"
+        }
+      ]
+    },
+    {
+      "module": "ssl",
+      "findings": [],
+      "cert_info": {}
+    }
+  ]
+}
