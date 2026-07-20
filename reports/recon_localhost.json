@@ -1,0 +1,62 @@
+└─# cat  recon_localhost:8080_20260720_115712.json
+{
+  "target": "localhost:8080",
+  "start": "2026-07-20 11:57:11",
+  "end": "2026-07-20 11:57:12",
+  "duration": 0.8,
+  "score": 100,
+  "risk": "LOW",
+  "issues": [],
+  "modules": [
+    {
+      "module": "dns",
+      "findings": [
+        {
+          "type": "A_RECORD",
+          "value": "127.0.0.1"
+        },
+        {
+          "type": "REVERSE_DNS",
+          "value": "127.0.0.1 \u2192 localhost"
+        }
+      ],
+      "ips": [
+        "127.0.0.1"
+      ],
+      "cname": []
+    },
+    {
+      "module": "subdomains",
+      "found": [],
+      "total_checked": 97
+    },
+    {
+      "module": "ports",
+      "open_ports": [],
+      "risky_ports": []
+    },
+    {
+      "module": "web_tech",
+      "technologies": [],
+      "server": "",
+      "cms": ""
+    },
+    {
+      "module": "headers",
+      "missing": [],
+      "present": [],
+      "leaky": [],
+      "score": 0
+    },
+    {
+      "module": "paths",
+      "found": [],
+      "sensitive": []
+    },
+    {
+      "module": "ssl",
+      "findings": [],
+      "cert_info": {}
+    }
+  ]
+}
