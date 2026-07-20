@@ -1,0 +1,189 @@
+{
+  "target": "scanme.nmap.org",
+  "start": "2026-07-20 11:55:29",
+  "end": "2026-07-20 11:55:58",
+  "duration": 29.0,
+  "score": 39,
+  "risk": "HIGH",
+  "issues": [
+    {
+      "severity": "High",
+      "issue": "Risky port open: 21/FTP",
+      "detail": "FTP \u2014 check for anonymous login"
+    },
+    {
+      "severity": "Medium",
+      "issue": "Missing security header: Strict-Transport-Security",
+      "detail": "Enforces HTTPS \u2014 prevents SSL stripping"
+    },
+    {
+      "severity": "Medium",
+      "issue": "Missing security header: Content-Security-Policy",
+      "detail": "Prevents XSS and injection attacks"
+    },
+    {
+      "severity": "Medium",
+      "issue": "Missing security header: X-Frame-Options",
+      "detail": "Prevents clickjacking"
+    },
+    {
+      "severity": "Medium",
+      "issue": "Missing security header: X-Content-Type-Options",
+      "detail": "Prevents MIME sniffing"
+    },
+    {
+      "severity": "Medium",
+      "issue": "Missing security header: X-XSS-Protection",
+      "detail": "Legacy XSS filter"
+    },
+    {
+      "severity": "Medium",
+      "issue": "Missing security header: Referrer-Policy",
+      "detail": "Controls referrer information leakage"
+    },
+    {
+      "severity": "Medium",
+      "issue": "Missing security header: Permissions-Policy",
+      "detail": "Controls browser feature access"
+    },
+    {
+      "severity": "Low",
+      "issue": "Information leaking header: Server",
+      "detail": "Apache/2.4.7 (Ubuntu)"
+    },
+    {
+      "severity": "Critical",
+      "issue": "Sensitive file exposed: /.htaccess",
+      "detail": "HTTP 403, 291 bytes"
+    }
+  ],
+  "modules": [
+    {
+      "module": "dns",
+      "findings": [
+        {
+          "type": "A_RECORD",
+          "value": "45.33.32.156"
+        }
+      ],
+      "ips": [
+        "45.33.32.156"
+      ],
+      "cname": []
+    },
+    {
+      "module": "subdomains",
+      "found": [],
+      "total_checked": 97
+    },
+    {
+      "module": "ports",
+      "open_ports": [
+        {
+          "port": 21,
+          "service": "FTP",
+          "risk_note": "FTP \u2014 check for anonymous login",
+          "banner": ""
+        },
+        {
+          "port": 22,
+          "service": "SSH",
+          "risk_note": "",
+          "banner": ""
+        },
+        {
+          "port": 80,
+          "service": "HTTP",
+          "risk_note": "",
+          "banner": ""
+        }
+      ],
+      "risky_ports": [
+        {
+          "port": 21,
+          "service": "FTP",
+          "risk_note": "FTP \u2014 check for anonymous login",
+          "banner": ""
+        }
+      ]
+    },
+    {
+      "module": "web_tech",
+      "technologies": [
+        {
+          "name": "Server",
+          "value": "Apache/2.4.7 (Ubuntu)"
+        }
+      ],
+      "server": "Apache/2.4.7 (Ubuntu)",
+      "cms": ""
+    },
+    {
+      "module": "headers",
+      "missing": [
+        {
+          "header": "Strict-Transport-Security",
+          "description": "Enforces HTTPS \u2014 prevents SSL stripping"
+        },
+        {
+          "header": "Content-Security-Policy",
+          "description": "Prevents XSS and injection attacks"
+        },
+        {
+          "header": "X-Frame-Options",
+          "description": "Prevents clickjacking"
+        },
+        {
+          "header": "X-Content-Type-Options",
+          "description": "Prevents MIME sniffing"
+        },
+        {
+          "header": "X-XSS-Protection",
+          "description": "Legacy XSS filter"
+        },
+        {
+          "header": "Referrer-Policy",
+          "description": "Controls referrer information leakage"
+        },
+        {
+          "header": "Permissions-Policy",
+          "description": "Controls browser feature access"
+        }
+      ],
+      "present": [],
+      "leaky": [
+        {
+          "header": "Server",
+          "value": "Apache/2.4.7 (Ubuntu)"
+        }
+      ],
+      "score": 0
+    },
+    {
+      "module": "paths",
+      "found": [
+        {
+          "path": "/.htaccess",
+          "url": "http://scanme.nmap.org/.htaccess",
+          "status": 403,
+          "size": 291,
+          "content_type": "text/html; charset=iso-8859-1"
+        }
+      ],
+      "sensitive": [
+        {
+          "path": "/.htaccess",
+          "url": "http://scanme.nmap.org/.htaccess",
+          "status": 403,
+          "size": 291,
+          "content_type": "text/html; charset=iso-8859-1"
+        }
+      ]
+    },
+    {
+      "module": "ssl",
+      "findings": [],
+      "cert_info": {}
+    }
+  ]
+}
