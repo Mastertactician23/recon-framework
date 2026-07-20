@@ -1,0 +1,202 @@
+{
+  "target": "dvwa:80",
+  "start": "2026-07-20 11:48:55",
+  "end": "2026-07-20 11:48:56",
+  "duration": 1.0,
+  "score": 32,
+  "risk": "HIGH",
+  "issues": [
+    {
+      "severity": "Medium",
+      "issue": "Missing security header: Strict-Transport-Security",
+      "detail": "Enforces HTTPS \u2014 prevents SSL stripping"
+    },
+    {
+      "severity": "Medium",
+      "issue": "Missing security header: Content-Security-Policy",
+      "detail": "Prevents XSS and injection attacks"
+    },
+    {
+      "severity": "Medium",
+      "issue": "Missing security header: X-Frame-Options",
+      "detail": "Prevents clickjacking"
+    },
+    {
+      "severity": "Medium",
+      "issue": "Missing security header: X-Content-Type-Options",
+      "detail": "Prevents MIME sniffing"
+    },
+    {
+      "severity": "Medium",
+      "issue": "Missing security header: X-XSS-Protection",
+      "detail": "Legacy XSS filter"
+    },
+    {
+      "severity": "Medium",
+      "issue": "Missing security header: Referrer-Policy",
+      "detail": "Controls referrer information leakage"
+    },
+    {
+      "severity": "Medium",
+      "issue": "Missing security header: Permissions-Policy",
+      "detail": "Controls browser feature access"
+    },
+    {
+      "severity": "Low",
+      "issue": "Information leaking header: Server",
+      "detail": "Apache/2.4.25 (Debian)"
+    },
+    {
+      "severity": "Critical",
+      "issue": "Sensitive file exposed: /.htaccess",
+      "detail": "HTTP 403, 288 bytes"
+    },
+    {
+      "severity": "Critical",
+      "issue": "Sensitive file exposed: /phpinfo.php",
+      "detail": "HTTP 302, 0 bytes"
+    }
+  ],
+  "modules": [
+    {
+      "module": "dns",
+      "findings": [
+        {
+          "type": "A_RECORD",
+          "value": "172.18.0.3"
+        },
+        {
+          "type": "REVERSE_DNS",
+          "value": "172.18.0.3 \u2192 dvwa.soc-lab"
+        }
+      ],
+      "ips": [
+        "172.18.0.3"
+      ],
+      "cname": []
+    },
+    {
+      "module": "subdomains",
+      "found": [],
+      "total_checked": 97
+    },
+    {
+      "module": "ports",
+      "open_ports": [
+        {
+          "port": 80,
+          "service": "HTTP",
+          "risk_note": "",
+          "banner": ""
+        }
+      ],
+      "risky_ports": []
+    },
+    {
+      "module": "web_tech",
+      "technologies": [
+        {
+          "name": "Server",
+          "value": "Apache/2.4.25 (Debian)"
+        }
+      ],
+      "server": "Apache/2.4.25 (Debian)",
+      "cms": ""
+    },
+    {
+      "module": "headers",
+      "missing": [
+        {
+          "header": "Strict-Transport-Security",
+          "description": "Enforces HTTPS \u2014 prevents SSL stripping"
+        },
+        {
+          "header": "Content-Security-Policy",
+          "description": "Prevents XSS and injection attacks"
+        },
+        {
+          "header": "X-Frame-Options",
+          "description": "Prevents clickjacking"
+        },
+        {
+          "header": "X-Content-Type-Options",
+          "description": "Prevents MIME sniffing"
+        },
+        {
+          "header": "X-XSS-Protection",
+          "description": "Legacy XSS filter"
+        },
+        {
+          "header": "Referrer-Policy",
+          "description": "Controls referrer information leakage"
+        },
+        {
+          "header": "Permissions-Policy",
+          "description": "Controls browser feature access"
+        }
+      ],
+      "present": [],
+      "leaky": [
+        {
+          "header": "Server",
+          "value": "Apache/2.4.25 (Debian)"
+        }
+      ],
+      "score": 0
+    },
+    {
+      "module": "paths",
+      "found": [
+        {
+          "path": "/robots.txt",
+          "url": "http://dvwa:80/robots.txt",
+          "status": 200,
+          "size": 26,
+          "content_type": "text/plain"
+        },
+        {
+          "path": "/.htaccess",
+          "url": "http://dvwa:80/.htaccess",
+          "status": 403,
+          "size": 288,
+          "content_type": "text/html; charset=iso-8859-1"
+        },
+        {
+          "path": "/server-status",
+          "url": "http://dvwa:80/server-status",
+          "status": 403,
+          "size": 292,
+          "content_type": "text/html; charset=iso-8859-1"
+        },
+        {
+          "path": "/phpinfo.php",
+          "url": "http://dvwa:80/phpinfo.php",
+          "status": 302,
+          "size": 0,
+          "content_type": "text/html; charset=UTF-8"
+        }
+      ],
+      "sensitive": [
+        {
+          "path": "/.htaccess",
+          "url": "http://dvwa:80/.htaccess",
+          "status": 403,
+          "size": 288,
+          "content_type": "text/html; charset=iso-8859-1"
+        },
+        {
+          "path": "/phpinfo.php",
+          "url": "http://dvwa:80/phpinfo.php",
+          "status": 302,
+          "size": 0,
+          "content_type": "text/html; charset=UTF-8"
+        }
+      ]
+    },
+    {
+      "module": "ssl",
+      "findings": [],
+      "cert_info": {}
+    }
+  ]
+}
