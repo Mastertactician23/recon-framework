@@ -1,0 +1,77 @@
+{
+  "target": "testphp.vulnweb.com",
+  "start": "2026-07-20 12:14:20",
+  "end": "2026-07-20 12:15:14",
+  "duration": 54.4,
+  "score": 92,
+  "risk": "LOW",
+  "issues": [
+    {
+      "severity": "High",
+      "issue": "Risky port open: 21/FTP",
+      "detail": "FTP \u2014 check for anonymous login"
+    }
+  ],
+  "modules": [
+    {
+      "module": "dns",
+      "findings": [
+        {
+          "type": "A_RECORD",
+          "value": "44.228.249.3"
+        }
+      ],
+      "ips": [
+        "44.228.249.3"
+      ],
+      "cname": []
+    },
+    {
+      "module": "subdomains",
+      "found": [],
+      "total_checked": 97
+    },
+    {
+      "module": "ports",
+      "open_ports": [
+        {
+          "port": 21,
+          "service": "FTP",
+          "risk_note": "FTP \u2014 check for anonymous login",
+          "banner": ""
+        }
+      ],
+      "risky_ports": [
+        {
+          "port": 21,
+          "service": "FTP",
+          "risk_note": "FTP \u2014 check for anonymous login",
+          "banner": ""
+        }
+      ]
+    },
+    {
+      "module": "web_tech",
+      "technologies": [],
+      "server": "",
+      "cms": ""
+    },
+    {
+      "module": "headers",
+      "missing": [],
+      "present": [],
+      "leaky": [],
+      "score": 0
+    },
+    {
+      "module": "paths",
+      "found": [],
+      "sensitive": []
+    },
+    {
+      "module": "ssl",
+      "findings": [],
+      "cert_info": {}
+    }
+  ]
+}
